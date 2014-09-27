@@ -1,10 +1,10 @@
 Template.gameList.helpers {
 
-	games: (arg) ->
-		console.log arg
+	games: () ->
 		return Games.find().map (game) ->
+			game.author = 'A G-g-g-ghost!'
 			author = Meteor.users.findOne(game.userId)
-			#game.author = author.emails[0].address || 'A Ghost'
+			game.author = author.username if author
 			return game
 
 }
