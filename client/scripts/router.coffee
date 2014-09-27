@@ -22,3 +22,16 @@ Router.map () ->
 
 	# User Account Page
 	@route 'myAccount', { path: '/me' }
+
+	# Game Details Pages
+	@route 'gameDetails',
+		data: ->
+			return Games.findOne(@params._id)
+
+		onBeforeAction: ->
+			game = @data()
+
+		path: '/game/:_id'
+
+		waitOn: ->
+			return Meteor.subscribe('games', @params._id)
