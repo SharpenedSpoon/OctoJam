@@ -19,3 +19,6 @@ Router.map () ->
 
 	# 'All Games' Page
 	@route 'games', { path: '/games' }
+
+	# User Account Page
+	@route 'myAccount', { path: '/me' }
