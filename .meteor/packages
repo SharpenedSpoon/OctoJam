@@ -6,3 +6,11 @@
 meteor-platform
 autopublish
 insecure
+accounts-base
+accounts-password
+accounts-ui
+coffeescript
+iron:layout
+mizzao:bootstrap-3
+fourseven:scss
+

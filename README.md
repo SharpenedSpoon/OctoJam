@@ -27,3 +27,12 @@ Octo is a compiler and emulator for Chip8, and you can read more about it (and t
 	* Setting the submission start and end dates, and the voting start and end dates
 * Pages
 	* Show some pages. Not a CMS though.
+
+## Packages Used
+* accounts-base
+* accounts-password
+* accounts-ui
+* coffeescript
+* iron:layout
+* mizzao:bootstrap-3
+* fourseven:scss
