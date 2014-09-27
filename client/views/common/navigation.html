@@ -8,8 +8,9 @@
 
 		<div class="collapse navbar-collapse" id="#navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="/">Home</a></li>
-				<li class=""><a href="/games">Games</a></li>
+				{{#each navItems}}
+					<li class="{{activeClass}}"><a href="{{path}}">{{title}}</a></li>
+				{{/each}}
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
@@ -23,8 +24,21 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <template name="_loginButtonsAdditionalLoggedInDropdownActions">
-    <button class="btn btn-default btn-block" id="login-buttons-edit-profile">Edit profile</button>
+    <!-- <button class="btn btn-default btn-block" id="login-buttons-edit-profile">Edit profile</button> -->
 
 	<!--
 	For later:

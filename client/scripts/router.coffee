@@ -1,4 +1,4 @@
-# see https://github.com/EventedMind/iron-router/blob/devel/DOCS.md#route-paths-and-parameters
+# see https://github.com/EventedMind/iron-router/blob/devel/Guide.md
 
 
 # Defaults for the router
@@ -16,3 +16,6 @@ Router.map () ->
 
 	# Home Page
 	@route 'home', { path: '/' }
+
+	# 'All Games' Page
+	@route 'games', { path: '/games' }

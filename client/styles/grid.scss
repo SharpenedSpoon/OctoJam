@@ -1,0 +1,22 @@
+.flexbox-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
+
+
+.one-fourth,
+.one-third,
+.one-half,
+.two-thirds,
+.three-fourths {
+	float: left;
+	padding: 21px;
+}
+
+.one-fourth { width: 25% }
+.one-third { width: (100% / 3) }
+.one-half { width: 50% }
+.two-thirds { width: (2 * 100% / 3) }
+.three-fourths { width: 75% }
