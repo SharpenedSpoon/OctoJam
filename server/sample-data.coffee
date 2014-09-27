@@ -51,7 +51,15 @@ populateSampleData = () ->
 		}
 
 		Games.insert {
-			title: 'Smile'
+			title: 'Cave Explorer 2'
+			embedId: 'e171ad3a2c2385ae11ea'
+			status: 'active'
+			userId: 'qjgRNwijPGED9mgn3'
+			description: 'No Description, still.'
+		}
+
+		Games.insert {
+			title: 'Smile 2'
 			embedId: '080ccbf4d01bba5affcb'
 			status: 'active'
 			userId: 'qjgRNwijPGED9mgn3'
@@ -66,6 +74,14 @@ populateSampleData = () ->
 			description: 'An adaptation of the Atari 2600 game "Outlaw" for the Chip8.
 
 	Move with ASWD and fire with E. Holding a direction while firing will fire an angled shot, which ricochets.'
+		}
+
+		Games.insert {
+			title: 'Smile'
+			embedId: '080ccbf4d01bba5affcb'
+			status: 'active'
+			userId: 'qjgRNwijPGED9mgn3'
+			description: 'A very simple example program which draws smiley faces on the screen randomly and periodically clears the display.'
 		}
 
 		Games.insert {

@@ -1,0 +1,11 @@
+.game-list {
+	align-items: stretch;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	.game.game-item {
+		padding: 8px;
+		width: 256px + 2 * 8px; // magic number based on the iframe width
+	}
+}

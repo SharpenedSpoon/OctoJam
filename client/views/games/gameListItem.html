@@ -1,8 +1,10 @@
 <template name="gameListItem">
 
-	<div class="game game-item one-fourth">
+	<div class="game game-item">
 		<h4 class="title">{{title}}</h4>
 		<h5 class="author">{{author}}</h5>
+		{{> octoEmbed}}
+		<div class="description">{{description}}</div>
 		<details>
 			<summary><small>Debug Info</small></summary>
 			<div><small>Debug author (from helpers): {{author}}</small></div>
@@ -14,7 +16,6 @@
 			<div><small>Debug createdAt: {{createdAt}}</small></div>
 			<div><small>Debug updatedAt: {{updatedAt}}</small></div>
 		</details>
-		<div class="description">{{description}}</div>
 	</div>
 
 </template>
