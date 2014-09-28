@@ -12,10 +12,10 @@ Populate the database with some sample data if there is none already
 
 
 Meteor.startup () ->
-	populateSampleData()
+	#populateSampleData()
 
 populateSampleData = () ->
-	if (! Games.findOne())
+	if (! Games.findOne() && false)
 		Games.insert {
 			title: 'Cave Explorer'
 			embedId: 'a833793082d98eaa905d'
