@@ -23,6 +23,15 @@ Router.map () ->
 	# User Account Page
 	@route 'myAccount', { path: '/me' }
 
+	# Wallpaper
+	@route 'wallpaper', { path: '/wallpaper' }
+
+	# Static Content Pages
+	@route 'faq', { path: '/faq' }
+	@route 'chip8Overview', { path: '/chip8-overview' }
+	@route 'rules', { path: '/rules' }
+	@route 'bootstrap', { path: '/bootstrap' }
+
 	# Game Details Pages
 	@route 'gameDetails',
 		data: ->

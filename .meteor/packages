@@ -10,10 +10,9 @@ accounts-base
 accounts-password
 coffeescript
 iron:layout
-mizzao:bootstrap-3
 fourseven:scss
 iron:router
 ian:accounts-ui-bootstrap-3
 sewdn:collection-behaviours
 dburles:collection-helpers
-
+reywood:bootstrap3-sass
