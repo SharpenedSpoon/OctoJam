@@ -1,0 +1,29 @@
+<template name="newGame">
+
+	<h1 class="page-header">Submit Your Game</h1>
+
+	{{> newGameForm}}
+
+</template>
+
+<template name="newGameForm">
+
+	<div class="form-group">
+		<label for="title">Game Name<sup class="text-warning">*</sup></label>
+		<input class="form-control" type="text" required name="title" id="title" />
+	</div>
+
+	<div class="form-group">
+		<label for="embedId">Gist ID<sup class="text-warning">*</sup></label>
+		<input class="form-control" type="text" required name="embedId" id="embedId" />
+		<div class="help-block">In the Octo editor, click on the <strong>Share</strong> to get a page you can share (its URL will look like <code>http://<wbr/>johnearnest.github.io/<wbr/>Octo/<wbr/>index.html?gist=b49ce7d5359a4f9152b2</code>). Use the characters located after "gist". (in previous example, <code>b49ce7d5359a4f9152b2</code>)</div>
+	</div>
+
+	<div class="form-group">
+		<label for="description">Description<sup class="text-warning">*</sup></label>
+		<textarea class="form-control" required name="description" id="description" rows=10></textarea>
+	</div>
+
+	<button type="button" id="submit" class="btn btn-primary">Submit</button>
+
+</template>

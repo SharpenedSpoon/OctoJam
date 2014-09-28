@@ -32,6 +32,9 @@ Router.map () ->
 	@route 'rules', { path: '/rules' }
 	@route 'bootstrap', { path: '/bootstrap' }
 
+	# Submit a game page
+	@route 'newGame', { path: '/submit-game' }
+
 	# Game Details Pages
 	@route 'gameDetails',
 		data: ->
