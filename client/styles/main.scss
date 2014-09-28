@@ -1,3 +1,5 @@
 // see https://atmospherejs.com/reywood/bootstrap3-sass
 @import "definitions";
 @import '.meteor/local/build/programs/server/assets/packages/reywood_bootstrap3-sass/bootstrap';
+
+body { padding-top: 70px; }

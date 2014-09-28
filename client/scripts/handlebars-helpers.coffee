@@ -4,6 +4,9 @@
 Handlebars.registerHelper 'active', (path) ->
 	return (if path == Router.current().path then 'active' else '')
 
+Handlebars.registerHelper 'isActive', (path) ->
+	return (path == Router.current().path)
+
 
 Meteor.startup () ->
 	Games.helpers {

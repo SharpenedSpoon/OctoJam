@@ -1,8 +1,25 @@
 <template name="home">
-	<h1>Octo-ber Jam 2014</h1>
+	<h1 class="page-header">Octo-ber Jam 2014</h1>
+
+	<!-- http://johnearnest.github.io/Octo/index.html?gist=e7a2545d7d6cc7ad94af -->
+	<center>
+		<iframe src="http://johnearnest.github.io/Octo/embed.html?scale=4&gist=e7a2545d7d6cc7ad94af"
+				frameborder="0"
+				marginheight="0"
+				marginwidth="0"
+				scrolling="no"
+				seamless="true"
+				width="512"
+				height="256"
+				>
+		</iframe>
+	</center>
+
 	<p>Chip8 is a language that let programmers write portable games for 8-bit home computers in the 1970s. Today, Chip8 lives on in the form of emulators.</p>
-
-	<p>[insert an iframe with a demo game of some kind or maybe I'll just make an animated logo]</p>
-
+	
 	<p><a href="https://github.com/JohnEarnest/Octo" alt="Link to Octo Github">Octo</a> is a tool that makes it easy to write and share Chip8 programs. Roll up your sleeves and join us for a retro game-jam celebrating Chip8!</p>
+
+	{{> rules}}
+	{{> chip8Overview}}
+	{{> faq}}
 </template>
