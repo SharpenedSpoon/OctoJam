@@ -6,12 +6,13 @@ Template.newGameForm.events {
 	'keyup input': (event, template) ->
 		if (event.which == 13) # 13 = enter
 			event.preventDefault()
-			console.log addNewGameFromForm(event, template)
+			addNewGameFromForm(event, template)
 }
 
 
 addNewGameFromForm = (event, template) ->
-	if shouldSubmitNewGameForm(event, template) && Meteor.userId()
+	gameId = null
+	if ((shouldSubmitNewGameForm(event, template)) && (Meteor.user() != null))
 
 		# using Games schema version 1
 		fields = {
@@ -36,9 +37,14 @@ addNewGameFromForm = (event, template) ->
 
 		# disable the button and save
 		template.find('#submit').disabled = true
-		return Games.insert(data)
+		gameId = Games.insert(data)
+
+	if gameId
+		Router.go('/game/'+gameId)
 	else
-		return null
+		Router.go('/')
+
+	return gameId
 
 
 
@@ -51,6 +57,7 @@ shouldSubmitNewGameForm = (event, template) ->
 	template.findAll(':required').forEach (field) ->
 		if field.value.trim() == ''
 			shouldSubmit = false
+			console.log 'Must have everything filled out'
 	return shouldSubmit
 
 
