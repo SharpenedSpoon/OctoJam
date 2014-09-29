@@ -18,13 +18,13 @@ Router.map () ->
 	@route 'home', { path: '/' }
 
 	# 'All Games' Page
-	@route 'games', { path: '/games' }
+	# @route 'games', { path: '/games' }
 
 	# User Account Page
-	@route 'myAccount', { path: '/me' }
+	# @route 'myAccount', { path: '/me' }
 
 	# Wallpaper
-	@route 'wallpaper', { path: '/wallpaper' }
+	# @route 'wallpaper', { path: '/wallpaper' }
 
 	# Static Content Pages
 	@route 'faq', { path: '/faq' }
@@ -33,10 +33,10 @@ Router.map () ->
 	@route 'bootstrap', { path: '/bootstrap' }
 
 	# Submit a game page
-	@route 'newGame', { path: '/submit-game' }
+	# @route 'newGame', { path: '/submit-game' }
 
 	# Game Details Pages
-	@route 'gameDetails',
+	###@route 'gameDetails',
 		data: ->
 			return Games.findOne(@params._id)
 
@@ -46,4 +46,4 @@ Router.map () ->
 		path: '/game/:_id'
 
 		waitOn: ->
-			return Meteor.subscribe('games', @params._id)
+			return Meteor.subscribe('games', @params._id)###
