@@ -3,9 +3,13 @@
 # see https://coderwall.com/p/ahlrua
 Handlebars.registerHelper 'active', (path) ->
 	return (if path == Router.current().path then 'active' else '')
-
 Handlebars.registerHelper 'isActive', (path) ->
 	return (path == Router.current().path)
+
+
+# Tries to figure out the current page title
+Handlebars.registerHelper 'pageTitle', () ->
+	return 'Page Title'
 
 
 Meteor.startup () ->
