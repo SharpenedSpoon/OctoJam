@@ -4,8 +4,6 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
 accounts-base
 accounts-password
 coffeescript
@@ -16,4 +14,3 @@ sewdn:collection-behaviours
 dburles:collection-helpers
 less
 simison:bootstrap3-less
-
