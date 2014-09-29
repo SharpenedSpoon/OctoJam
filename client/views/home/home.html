@@ -1,26 +1,38 @@
 <template name="home">
-	<div class="jumbotron" style="text-align: center;">
-		<h1>Octo-ber Jam 2014</h1>
 
-		<p>
-			<iframe src="http://johnearnest.github.io/Octo/embed.html?scale=4&gist=e7a2545d7d6cc7ad94af"
-					frameborder="0"
-					marginheight="0"
-					marginwidth="0"
-					scrolling="no"
-					seamless="true"
-					width="512"
-					height="256"
-					>
-			</iframe>
-		</p>
+	{{> jumbotron}}
 
-		<p>Chip8 is a language that let programmers write portable games for 8-bit home computers in the 1970s. Today, Chip8 lives on in the form of emulators.</p>
-
-		<p><a href="https://github.com/JohnEarnest/Octo" alt="Link to Octo Github">Octo</a> is a tool that makes it easy to write and share Chip8 programs. Roll up your sleeves and join us for a retro game-jam celebrating Chip8!</p>
+	<div class="container">
+		{{> rules}}
+		{{> chip8Overview}}
+		{{> faq}}
 	</div>
+</template>
 
-	{{> rules}}
-	{{> chip8Overview}}
-	{{> faq}}
+
+<template name="jumbotron">
+
+<div class="jumbotron" style="text-align: center;">
+
+
+	<p>
+		<iframe src="http://johnearnest.github.io/Octo/embed.html?scale=4&gist=e7a2545d7d6cc7ad94af"
+				frameborder="0"
+				marginheight="0"
+				marginwidth="0"
+				scrolling="no"
+				seamless="true"
+				width="512"
+				height="256"
+				>
+		</iframe>
+	</p>
+
+	<h1>Octo-ber Jam 2014</h1>
+
+	<p>Chip8 is a language that let programmers write portable games for 8-bit home computers in the 1970s. Today, Chip8 lives on in the form of emulators.</p>
+
+	<p><a href="https://github.com/JohnEarnest/Octo" alt="Link to Octo Github">Octo</a> is a tool that makes it easy to write and share Chip8 programs. Roll up your sleeves and join us for a retro game-jam celebrating Chip8!</p>
+</div>
+
 </template>
