@@ -22,11 +22,11 @@ Router.map () ->
 					gist = Meteor.http.call 'GET', 'https://api.github.com/gists/' + this.params.id,
 						headers:
 							'User-Agent': 'OctoJam'
-					gist = JSON.stringify(gist)
+					gist = JSON.stringify(gist.data)
 					Gists.insert({ gistId: this.params.id, content: gist })
 					this.response.end gist
 				else
 					# found the cached gist, return it
 					this.response.end gist.content
 			else
-				this.response.end 'Sorry, can\'t do that!'
+				this.response.end 'Error. Can\'t do that.'
