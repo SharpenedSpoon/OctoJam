@@ -16,13 +16,86 @@ Games
         title       (string)
         embedId     (string) (/Octo/embed.html?scale=2&gist=________)
         status      (string)
-        userId      (string) (user._id)
+        owner       (string) (user._id)
         description (string)
         [createdAt] (automatic)
         [updatedAt] (automatic)
         [gameId]    (automatic)
 */
-Games = new Meteor.Collection('games');
-Games.timestampable();
-Games.autoIncrementable('gameId');
-Games.softRemovable();
+Meteor.startup(function() {
+    // AutoForm.debug();
+});
+Games = new Mongo.Collection('games');
+// Games.timestampable();
+// Games.autoIncrementable('gameId');
+// Games.softRemovable();
+Games.attachSchema(new SimpleSchema({
+    title: {
+        type: String,
+        label: 'Game Name',
+        max: 200,
+    },
+    embedId: {
+        type: String,
+        label: 'Gist ID',
+        max: 100,
+    },
+    description: {
+        type: String,
+        label: 'Description',
+        max: 1000,
+        autoform: {
+            rows: 10
+        }
+    },
+
+    // automatic/forced stuff
+    createdAt: {
+        type: Date,
+        autoform: {
+            omit: true
+        },
+        autoValue: function() {
+            if (this.isInsert) {
+                return new Date();
+            } else if (this.isUpsert) {
+                return {$setOnInsert: new Date};
+            } else {
+                this.unset();
+            }
+        }
+    },
+    updatedAt: {
+        type: Date,
+        autoform: {
+            omit: true
+        },
+        autoValue: function() {
+            if (this.isUpdate) {
+                return new Date();
+            }
+        },
+        denyInsert: true,
+        optional: true
+    },
+    owner: {
+        type: String,
+        autoform: {
+            omit: true
+        },
+        autoValue: function() {
+            return this.userId;
+        }
+    }
+}));
+
+Games.allow({
+    insert: function(userId, doc) {
+        // user must be logged in, and doc must be owned by user
+        console.log(userId);
+        console.log(doc);
+        console.log(doc.owner);
+        // return (userId && doc.owner === userId);
+        return true;
+    }
+})

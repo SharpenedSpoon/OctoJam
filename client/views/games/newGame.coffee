@@ -1,3 +1,4 @@
+###
 Template.newGameForm.events {
 	'click #submit': (event, template) ->
 		event.preventDefault()
@@ -45,12 +46,13 @@ addNewGameFromForm = (event, template) ->
 		Router.go('/')
 
 	return gameId
-
+###
 
 
 ###
     Check to make sure all required fields
     are filled out, etc
+###
 ###
 shouldSubmitNewGameForm = (event, template) ->
 	shouldSubmit = true
@@ -59,7 +61,7 @@ shouldSubmitNewGameForm = (event, template) ->
 			shouldSubmit = false
 			console.log 'Must have everything filled out'
 	return shouldSubmit
-
+###
 
 ###
     can't believe I'm writing this...
