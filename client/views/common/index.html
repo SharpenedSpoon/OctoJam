@@ -20,4 +20,15 @@
 
 		{{> yield region='footerRegion'}}
 	</div>
+	{{setPageTitle}}
+</template>
+
+<template name="homepageLayout">
+	{{> yield region='headerRegion'}}
+
+	{{> yield}}
+
+	{{> yield region='footerRegion'}}
+
+	{{setPageTitle}}
 </template>

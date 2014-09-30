@@ -15,7 +15,7 @@ Router.configure
 Router.map () ->
 
 	# Home Page
-	@route 'home', { path: '/' }
+	@route 'home', { path: '/', layoutTemplate: 'homepageLayout' }
 
 	# 'All Games' Page
 	@route 'games', { path: '/games' }
