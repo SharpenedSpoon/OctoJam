@@ -1,15 +1,17 @@
-<html>
 
+<html>
 	<head>
 		<title>Octo Embeddable</title>
 	</head>
 	<body style="margin:0px; padding:0px;">
 		<canvas id="target" width="640" height="320"></canvas>
-		<script src="js/compiler.js"></script>
-		<script src="js/emulator.js"></script>
-		<script src="js/shared.js"></script>
+		<script src="http://johnearnest.github.io/Octo/js/compiler.js"></script>
+		<script src="http://johnearnest.github.io/Octo/js/emulator.js"></script>
+		<script src="http://johnearnest.github.io/Octo/js/shared.js"></script>
 
 		<script>
+			var emulator = new Emulator();
+
 			function keyDown(event) {
 				if (!(event.keyCode in emulator.keys)) {
 					emulator.keys[event.keyCode] = true;
@@ -38,7 +40,7 @@
 				}
 				if (emulator.dt > 0) { emulator.dt--; }
 				if (emulator.st > 0) { emulator.st--; }
-				renderDisplay();
+				renderDisplay(emulator);
 			}
 
 			function run(code) {
@@ -60,7 +62,7 @@
 				var xhr = new XMLHttpRequest();
 				var gistId = location.search.match(/gist=(\w+)/);
 				if (!gistId) { return; }
-				xhr.open('GET', 'https://api.github.com/gists/' + gistId[1]);
+				xhr.open('GET', '/gists/' + gistId[1]);
 				xhr.onreadystatechange = function() {
 					if (xhr.readyState != 4) { return; }
 					var result = JSON.parse(xhr.responseText);

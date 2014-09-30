@@ -13,11 +13,22 @@
 
 
 <template name="layout">
-	<!-- <div class="container"> -->
+	<div class="container">
 		{{> yield region='headerRegion'}}
 
 		{{> yield}}
 
 		{{> yield region='footerRegion'}}
-	<!-- </div> -->
+	</div>
+	{{setPageTitle}}
+</template>
+
+<template name="homepageLayout">
+	{{> yield region='headerRegion'}}
+
+	{{> yield}}
+
+	{{> yield region='footerRegion'}}
+
+	{{setPageTitle}}
 </template>

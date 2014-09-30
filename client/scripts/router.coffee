@@ -15,7 +15,7 @@ Router.configure
 Router.map () ->
 
 	# Home Page
-	@route 'home', { path: '/' }
+	@route 'home', { path: '/', layoutTemplate: 'homepageLayout' }
 
 	# 'All Games' Page
 	# @route 'games', { path: '/games' }
@@ -23,27 +23,24 @@ Router.map () ->
 	# User Account Page
 	# @route 'myAccount', { path: '/me' }
 
-	# Wallpaper
-	# @route 'wallpaper', { path: '/wallpaper' }
-
 	# Static Content Pages
-	@route 'faq', { path: '/faq' }
-	@route 'chip8Overview', { path: '/chip8-overview' }
-	@route 'rules', { path: '/rules' }
-	@route 'bootstrap', { path: '/bootstrap' }
+	# @route 'faq', { path: '/faq' }
+	# @route 'chip8Overview', { path: '/chip8-overview' }
+	# @route 'rules', { path: '/rules' }
+	# @route 'bootstrap', { path: '/bootstrap' }
 
 	# Submit a game page
 	# @route 'newGame', { path: '/submit-game' }
 
 	# Game Details Pages
-	###@route 'gameDetails',
-		data: ->
-			return Games.findOne(@params._id)
-
-		onBeforeAction: ->
-			game = @data()
-
-		path: '/game/:_id'
-
-		waitOn: ->
-			return Meteor.subscribe('games', @params._id)###
+	# @route 'gameDetails',
+	# 	data: ->
+	# 		return Games.findOne(@params._id)
+	#
+	# 	onBeforeAction: ->
+	# 		game = @data()
+	#
+	# 	path: '/game/:_id'
+	#
+	# 	waitOn: ->
+	# 		return Meteor.subscribe('games', @params._id)

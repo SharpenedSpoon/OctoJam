@@ -7,9 +7,13 @@ Handlebars.registerHelper 'isActive', (path) ->
 	return (path == Router.current().path)
 
 
-# Tries to figure out the current page title
-Handlebars.registerHelper 'pageTitle', () ->
-	return 'Page Title'
+# Tries to figure out and set the current page title
+currentPageTitle = () ->
+	title = 'Page Title'
+	return 'Octo-ber Jam 2014' + ' | ' + title
+
+Handlebars.registerHelper 'setPageTitle', () ->
+	document.title = currentPageTitle()
 
 
 Meteor.startup () ->
