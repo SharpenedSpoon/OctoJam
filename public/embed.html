@@ -5,9 +5,9 @@
 	</head>
 	<body style="margin:0px; padding:0px;">
 		<canvas id="target" width="640" height="320"></canvas>
-		<script src="js/compiler.js"></script>
-		<script src="js/emulator.js"></script>
-		<script src="js/shared.js"></script>
+		<script src="http://johnearnest.github.io/Octo/js/compiler.js"></script>
+		<script src="http://johnearnest.github.io/Octo/js/emulator.js"></script>
+		<script src="http://johnearnest.github.io/Octo/js/shared.js"></script>
 
 		<script>
 			function keyDown(event) {
@@ -60,7 +60,7 @@
 				var xhr = new XMLHttpRequest();
 				var gistId = location.search.match(/gist=(\w+)/);
 				if (!gistId) { return; }
-				xhr.open('GET', 'https://api.github.com/gists/' + gistId[1]);
+				xhr.open('GET', '/gists/' + gistId[1]);
 				xhr.onreadystatechange = function() {
 					if (xhr.readyState != 4) { return; }
 					var result = JSON.parse(xhr.responseText);

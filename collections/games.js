@@ -46,6 +46,22 @@ Games.attachSchema(new SimpleSchema({
         max: 1000,
         autoform: {
             rows: 10
+        },
+        autoValue: function() {
+            if (this.isSet) {
+                // strip tags and auto-p.
+                this.value = this.value
+                    .replace(/<[^>]*>/gm, '') // kill any tags
+                    .replace(/\t/g, '') // remove "\t"s
+                    .replace(/^\s+$/gm, '') // change lines that are just "\s"s to just line breaks
+                    .replace(/(?:^ +| +$)/gm, '') // trim each line
+                    .replace(/(\n\r?\n\r?)(?:\n\r?)+/g, "$1") // replace > 2 line breaks to just 2 line breaks
+                    .replace(/\n\r?(?!\n\r?)/g, '<br/>') // replace single line breaks with <br/>
+                    .replace(/^<br\/>/gm, '').replace(/<br\/>$/gm, '') // also kill orphaned <br/>'s at the beginning/end of lines
+                    .replace(/(^.+$)/gm, '<p>$1</p>') // wrap blocks of text in <p> tags
+                    .replace(/\n\r?/g, ''); // now "minify" the HTML to be just one line
+            }
+            return this.value;
         }
     },
 
@@ -98,4 +114,4 @@ Games.allow({
         // return (userId && doc.owner === userId);
         return true;
     }
-})
+});

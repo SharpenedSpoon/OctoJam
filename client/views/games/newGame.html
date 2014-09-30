@@ -7,7 +7,7 @@
 </template>
 
 <template name="newGameForm">
-	{{#autoForm collection="Games" id="insertNewGame" type="insert"}}
+	{{#autoForm collection="Games" id="upsertGame" type="insert"}}
 		<fieldset>
 			{{> afQuickField name='title'}}
 			{{> afQuickField name='embedId'}}
