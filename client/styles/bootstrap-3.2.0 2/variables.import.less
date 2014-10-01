@@ -2,6 +2,13 @@
 // Variables
 // --------------------------------------------------
 
+// Octo colors
+@brown: #AA4400;  // "Background"
+@yellow: #FFCC00; // "Foreground"
+@orange: #FFAA00; // "Buzzer"
+
+
+
 
 //== Colors
 //
@@ -13,9 +20,9 @@
 @gray-light:             lighten(#000, 46.7%); // #777
 @gray-lighter:           lighten(#000, 93.5%); // #eee
 
-@brand-primary:         #428bca;
+@brand-primary:         @brown;//#428bca;
 @brand-success:         #5cb85c;
-@brand-info:            #5bc0de;
+@brand-info:            @yellow;//#5bc0de;
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
 
@@ -39,7 +46,7 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -479,8 +486,8 @@
 @state-success-bg:               #dff0d8;
 @state-success-border:           darken(spin(@state-success-bg, -10), 5%);
 
-@state-info-text:                #31708f;
-@state-info-bg:                  #d9edf7;
+@state-info-text:                darken(@brand-info, 40%);//#31708f;
+@state-info-bg:                  @brand-info;//#d9edf7;
 @state-info-border:              darken(spin(@state-info-bg, -10), 7%);
 
 @state-warning-text:             #8a6d3b;
@@ -842,5 +849,3 @@
 @dl-horizontal-offset:        @component-offset-horizontal;
 //** Horizontal line color.
 @hr-border:                   @gray-lighter;
-
-
