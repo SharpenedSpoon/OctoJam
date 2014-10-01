@@ -1,22 +1,22 @@
 <template name="gameListItem">
 
 	<div class="game game-item">
-		<h4 class="title">{{title}}</h4>
+		<h4 class="title"><a href="{{pathFor 'gameDetails'}}">{{title}}</a></h4>
 		<h5 class="author">{{author}}</h5>
-		<h6><a href="{{pathFor 'gameDetails'}}">Details</a></h6>
-		{{> octoEmbed}}
-		<!-- <div class="description">{{description}}</div> -->
-		<!-- <details>
-			<summary><small>Debug Info</small></summary>
-			<div><small>Debug author (from helpers): {{author}}</small></div>
-			<div><small>Debug _id: {{_id}}</small></div>
-			<div><small>Debug embedId: {{embedId}}</small></div>
-			<div><small>Debug status: {{status}}</small></div>
-			<div><small>Debug gameId: {{gameId}}</small></div>
-			<div><small>Debug userId: {{userId}}</small></div>
-			<div><small>Debug createdAt: {{createdAt}}</small></div>
-			<div><small>Debug updatedAt: {{updatedAt}}</small></div>
-		</details> -->
+
+		<iframe
+			src="/embed.html?scale=2&gist={{gist}}"
+			frameborder="0"
+			marginheight="0"
+			marginwidth="0"
+			scrolling="no"
+			seamless="true"
+			width="256"
+			height="128"
+		></iframe>
+
+		<div><small><a href="http://johnearnest.github.io/Octo/index.html?gist={{embedId}}">Source</a></small></div>
+
 	</div>
 
 </template>

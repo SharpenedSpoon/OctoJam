@@ -2,12 +2,16 @@
 
 	<h1 class="page-header">Submit Your Game</h1>
 
-	{{> newGameForm}}
+	{{#if currentUser}}
+		{{> newGameForm}}
+	{{else}}
+		<div class="alert alert-success">Please log in to submit a game!</div>
+	{{/if}}
 
 </template>
 
 <template name="newGameForm">
-	{{#autoForm collection="Games" id="upsertGame" type="insert"}}
+	{{#autoForm collection="Games" id="insertGame" type="insert"}}
 		<fieldset>
 			{{> afQuickField name='title'}}
 			{{> afQuickField name='embedId'}}

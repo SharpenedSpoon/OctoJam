@@ -5,8 +5,6 @@
  */
 
 
-// using a bunch of these: https://atmospherejs.com/sewdn/collection-behaviours
-// ... they're so helpful!!
 
 
 
@@ -20,15 +18,14 @@ Games
         description (string)
         [createdAt] (automatic)
         [updatedAt] (automatic)
-        [gameId]    (automatic)
 */
-Meteor.startup(function() {
-    // AutoForm.debug();
-});
+
 Games = new Mongo.Collection('games');
 // Games.timestampable();
 // Games.autoIncrementable('gameId');
 // Games.softRemovable();
+
+// see https://github.com/aldeed/meteor-autoform
 Games.attachSchema(new SimpleSchema({
     title: {
         type: String,
@@ -56,10 +53,20 @@ Games.attachSchema(new SimpleSchema({
                     .replace(/^\s+$/gm, '') // change lines that are just "\s"s to just line breaks
                     .replace(/(?:^ +| +$)/gm, '') // trim each line
                     .replace(/(\n\r?\n\r?)(?:\n\r?)+/g, "$1") // replace > 2 line breaks to just 2 line breaks
-                    .replace(/\n\r?(?!\n\r?)/g, '<br/>') // replace single line breaks with <br/>
-                    .replace(/^<br\/>/gm, '').replace(/<br\/>$/gm, '') // also kill orphaned <br/>'s at the beginning/end of lines
-                    .replace(/(^.+$)/gm, '<p>$1</p>') // wrap blocks of text in <p> tags
-                    .replace(/\n\r?/g, ''); // now "minify" the HTML to be just one line
+                    //.replace(/\n\r?(?!\n\r?)/g, '<br/>') // replace single line breaks with <br/>
+                    //.replace(/^<br\/>/gm, '').replace(/<br\/>$/gm, '') // also kill orphaned <br/>'s at the beginning/end of lines
+                    //.replace(/(^.+$)/gm, '<p>$1</p>') // wrap blocks of text in <p> tags
+                    //.replace(/\n\r?/g, ''); // now "minify" the HTML to be just one line
+            }
+            return this.value;
+        }
+    },
+    active: {
+        type: Boolean,
+        label: 'Active',
+        autoValue: function() {
+            if (! this.isSet) {
+                this.value = true;
             }
             return this.value;
         }
@@ -102,16 +109,32 @@ Games.attachSchema(new SimpleSchema({
         autoValue: function() {
             return this.userId;
         }
+    },
+    author: {
+        type: String,
+        autoform: {
+            omit: true
+        },
+        autoValue: function() {
+            return Meteor.user().emails[0].address.replace(/@.*/, '')
+        }
     }
 }));
+
 
 Games.allow({
     insert: function(userId, doc) {
         // user must be logged in, and doc must be owned by user
-        console.log(userId);
-        console.log(doc);
-        console.log(doc.owner);
-        // return (userId && doc.owner === userId);
-        return true;
+        return (userId && doc.owner === userId);
+    },
+
+    update: function(userId, doc) {
+        // user must be logged in, and doc must be owned by user
+        return (userId && doc.owner === userId);
+    },
+
+    remove: function(userId, doc) {
+        // user must be logged in, and doc must be owned by user
+        return (userId && doc.owner === userId);
     }
 });

@@ -1,0 +1,11 @@
+<template name="editGame">
+
+	<h1 class="page-header">Edit Your Game</h1>
+
+	{{#if shouldDisplay}}
+		{{> quickForm collection="Games" doc=editingDoc id="updateGame" type="update"}}
+	{{else}}
+		<div class="alert alert-danger">You have selected an invalid game, or you do not have permission to edit this game.<br/><br/>If you think this is in error, please let us know!</div>
+	{{/if}}
+
+</template>
