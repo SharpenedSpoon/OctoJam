@@ -1,5 +1,5 @@
 // see https://atmospherejs.com/reywood/bootstrap3-sass
-// @import "imports/_definitions";
+ @import "bootstrap/variables.import.less";
 // @import "/.meteor/packages/bootstrap3-less/bootstrap.import.less";
 // @import ".meteor/packages/bootstrap3-less/lib/less/theme.import.less";
 
@@ -29,4 +29,20 @@ body {
 }
 .page-header:first-child {
 	margin-top: 40px;
+}
+
+
+.btn-nav {
+	margin: 8px 10px !important;
+	padding: 6px 12px !important;
+}
+.btn-nav.btn-info {
+	color: @btn-info-color !important;
+	background-color: @btn-info-bg !important;
+	&:hover {
+		background-color: lighten(@btn-info-bg, 10%) !important;
+	}
+}
+.btn-info:hover {
+	background-color: lighten(@btn-info-bg, 10%) !important;
 }
