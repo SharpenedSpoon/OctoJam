@@ -1,0 +1,18 @@
+<template name="myGames">
+	<h1 class="page-header">My Games</h1>
+	{{#if hasGames}}
+		<table class="table table-striped"><tbody>
+			{{#each games}}
+				<tr>
+					<td>{{title}}</td>
+					<td>{{activeState}}</td>
+					<td><a href="{{pathFor 'gameDetails'}}">View</a></td>
+					<td><a href="{{pathFor 'editGame'}}">Edit</a></td>
+					<td><a href="http://johnearnest.github.io/Octo/index.html?gist={{embedId}}">Source</a></td>
+				</tr>
+			{{/each}}
+		</tbody></table>
+	{{else}}
+		<div class="alert alert-success">It appears that you have no games! If you think this is in error, please let us know (this site is in active beta, after all)!</div>
+	{{/if}}
+</template>

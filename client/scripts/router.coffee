@@ -22,6 +22,7 @@ Router.map () ->
 
 	# User Account Page
 	# @route 'myAccount', { path: '/me' }
+	@route 'myGames', { path: '/me' }
 
 	# Static Content Pages
 	# @route 'faq', { path: '/faq' }
