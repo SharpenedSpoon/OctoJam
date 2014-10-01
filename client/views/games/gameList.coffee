@@ -1,7 +1,7 @@
 Template.gameList.helpers {
 
 	games: () ->
-		return Games.find({active: true}, {limit: 4}).map (game) ->
+		output = Games.find({active: true}).map (game) ->
 			# game.author = 'A G-g-g-ghost!'
 			# author = Meteor.users.findOne(game.userId)
 			# game.author = author.username if author
@@ -10,6 +10,7 @@ Template.gameList.helpers {
 			game.gist = game.embedId
 			return game
 
+		return shuffleArray(output)
 }
 
 ###
@@ -55,3 +56,12 @@ Template.gameList.helpers {
 	txt = txt.replace(/\n\r?/g, '')
 
 	return txt
+
+
+@shuffleArray = (array) ->
+	for i in [array.length-1..1]
+        j = Math.floor(Math.random() * (i + 1))
+        temp = array[i]
+        array[i] = array[j]
+        array[j] = temp
+    return array
