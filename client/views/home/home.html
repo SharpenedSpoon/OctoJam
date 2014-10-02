@@ -12,22 +12,59 @@
 
 <template name="jumbotron">
 
-<div class="jumbotron" style="text-align: center;">
+	<div class="jumbotron" style="text-align: center;">
 
-<div class="container">
-	<p>
+		<div class="container">
+			<p>{{> octoEmbed gist='937cbcb434cc72b286fb' scale='4' link='false'}}</p>
 
-		{{> octoEmbed gist='937cbcb434cc72b286fb' scale='4' link='false'}}
+			<h1>Octo-ber Jam 2014</h1>
+			<p>Chip8 is a language that let programmers write portable games for 8-bit home computers in the 1970s. Today, Chip8 lives on in the form of emulators.</p>
+			<p><a href="http://johnearnest.github.io/Octo/" alt="Link to Octo IDE" target="_blank">Octo</a> is a tool that makes it easy to write and share Chip8 programs. Roll up your sleeves and join us for a retro game-jam celebrating Chip8!</p>
 
-	</p>
+		</div>
+	</div>
 
-	<h1>Octo-ber Jam 2014</h1>
+</template>
 
-	<p>Chip8 is a language that let programmers write portable games for 8-bit home computers in the 1970s. Today, Chip8 lives on in the form of emulators.</p>
 
-	<p><a href="http://johnearnest.github.io/Octo/" alt="Link to Octo IDE" target="_blank">Octo</a> is a tool that makes it easy to write and share Chip8 programs. Roll up your sleeves and join us for a retro game-jam celebrating Chip8!</p>
 
-</div>
-</div>
 
+<template name="chip8Overview">
+	<h2 class="page-header">Chip8 Overview</h2>
+
+	<p><a href="http://en.wikipedia.org/wiki/CHIP-8" alt="Wikipedia page for Chip8" target="_blank">Chip8</a> has a monochrome display which is 64 pixels wide and 32 pixels tall, a 16-key keypad and 3584 bytes of RAM. SuperChip8 is a series of extended instructions for Chip8 which add the ability to scroll the screen and draw on a higher resolution 128 pixel by 64 pixel display. SuperChip instructions are all fair game!</p>
+	<p><a href="http://johnearnest.github.io/Octo/" target="_blank">Octo</a> is programming language for creating Chip8 games, and it comes with a web-based IDE and Chip8 emulator, documentation and a bunch of examples.</p>
+
+	<h2 class="page-header">Where To Start</h2>
+	<p>The <a href="https://github.com/JohnEarnest/Octo/blob/gh-pages/docs/BeginnersGuide.md" target="_blank">Beginner's Guide</a> in the Octo documentation provides a great starting point.</p>
+	<p>Once you have made your way through that, check out the <a href="https://github.com/JohnEarnest/Octo/blob/gh-pages/docs/IntermediateGuide.md" target="_blank">Intermediate Guide</a> and the <a href="https://github.com/JohnEarnest/Octo/blob/gh-pages/docs/Manual.md" target="_blank">Manual</a>.</p>
+	<p>You can also check out <a href="http://chip8.com" target="_blank">Chip8.com</a> for a comprehensive archive of existing Chip8 games and programs.</p>
+</template>
+
+
+
+<template name="faq">
+	<h2 class="page-header">Frequently Asked Questions</h2>
+
+	<h4 class="text-primary">Do I have to use Octo?</h4>
+	<p class="faq-answer">Not at all- if you want to use other tools like <a href="https://groups.google.com/forum/#!topic/comp.sys.hp48/ECWLEZIhgio" target="_blank">CHIPPER</a> or write something totally new, go hog wild! Octo's emulator will be used for the gallery, but you can import a binary created elsewhere by turning it into a bunch of hex constants and pasting it into the Octo editor.</p>
+
+	<hr/>
+
+	<h4 class="text-primary">Chip8 specifications online have inconsistencies. How do I know which one to use?</h4>
+	<p class="faq-answer">Octo's emulation aims to be compliant with the descriptions of Chip8 described in the article <a href="http://mattmik.com/chip8.html" target="_blank">Mastering Chip8</a> by Matthew Mikolay, which we believe is the most accurate source available. SuperChip8 instructions behave as described <a href="http://code.google.com/p/chip8emu/source/browse/trunk/CHIP8/CHIPPER/CHIPPER.DOC?r=6" target="_blank">here</a> or in Octo's <a href="https://github.com/JohnEarnest/Octo/blob/gh-pages/docs/Manual.md" target="_blank">manual</a>.</p>
+
+	<hr/>
+
+	<h4 class="text-primary">The original Chip8 interpreter let you use <a href="http://en.wikipedia.org/wiki/RCA_1802">RCA 1802</a> machinecode to speed up your programs and do crazy tricks.<br/>RCA 1802s were used in space exploration! Can we write code that could run in <strong>SPACE</strong>?</h4>
+	<p class="faq-answer">Maybe next year. Unfortunately, most Chip8 emulators today don't support RCA 1802 emulation and it could interact in odd ways with SuperChip instructions.</p>
+
+</template>
+
+
+<template name="rules">
+	<h2 class="page-header">Official Rules</h2>
+
+	<p>Spend the month of October writing a Chip8 or SuperChip8 game, and then submit it to the online gallery on this site.</p>
+	<p>On November 1st, voting will be enabled for 7 days and participants can upvote their favorites.</p>
 </template>

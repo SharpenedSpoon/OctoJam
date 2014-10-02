@@ -16,7 +16,9 @@
 	<div class="container">
 		{{> yield region='headerRegion'}}
 
-		{{> yield}}
+		<div class="content">
+			{{> yield}}
+		</div>
 
 		{{> yield region='footerRegion'}}
 	</div>
@@ -25,7 +27,9 @@
 <template name="homepageLayout">
 	{{> yield region='headerRegion'}}
 
-	{{> yield}}
+	<div class="content">
+		{{> yield}}
+	</div>
 
 	{{> yield region='footerRegion'}}
 </template>
