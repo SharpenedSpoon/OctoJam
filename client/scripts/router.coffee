@@ -57,5 +57,7 @@ Router.map () ->
 
 		path: '/game/:_id'
 
+		layoutTemplate: 'gameDetailsLayout'
+
 		waitOn: ->
 			return Meteor.subscribe('games', @params._id)

@@ -27,9 +27,18 @@
 <template name="homepageLayout">
 	{{> yield region='headerRegion'}}
 
-	<div class="content">
+	<div class="content content-homepage">
 		{{> yield}}
 	</div>
 
 	{{> yield region='footerRegion'}}
+</template>
+
+<template name="gameDetailsLayout">
+	{{> yield region='headerRegion'}}
+
+	<div class="content content-game-details">
+		{{> yield}}
+	</div>
+
 </template>
