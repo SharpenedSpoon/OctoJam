@@ -110,15 +110,15 @@ Games.attachSchema(new SimpleSchema({
             return this.userId;
         }
     },
-    author: {
-        type: String,
-        autoform: {
-            omit: true
-        },
-        autoValue: function() {
-            return Meteor.user().emails[0].address.replace(/@.*/, '')
-        }
-    }
+    // author: {
+    //     type: String,
+    //     autoform: {
+    //         omit: true
+    //     },
+    //     autoValue: function() {
+    //         return Meteor.user().emails[0].address.replace(/@.*/, '')
+    //     }
+    // }
 }));
 
 
