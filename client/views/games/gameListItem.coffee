@@ -1,4 +1,5 @@
 Template.gameListItem.authorDisplayName = () ->
+
 	user = Meteor.users.findOne({ _id: @.owner })
 	name = ""
 	if user
