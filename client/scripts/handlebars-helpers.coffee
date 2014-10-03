@@ -21,7 +21,7 @@ Meteor.startup () ->
 			user = ''
 			user = Meteor.users.findOne(this.userId)
 			if user
-				if user.profile.displayName then
+				if user.profile.displayName
 					user = user.profile.displayName
 				else
 					user = user.username
