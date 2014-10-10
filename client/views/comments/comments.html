@@ -1,0 +1,9 @@
+<template name="comments">
+	<div class="comments">
+
+		Comments here!
+		{{#if currentUser}}
+			{{> quickForm collection="Comments" id="insertComment" type="insert"}}
+		{{/if}}
+	</div>
+</template>

@@ -1,3 +1,6 @@
+#
+# Games related hooks
+#
 Meteor.subscribe('games')
 
 AutoForm.hooks({
@@ -15,3 +18,10 @@ AutoForm.hooks({
 				Router.go('/')
 	}
 });
+
+
+
+#
+# Comments related
+#
+Meteor.subscribe('comments')

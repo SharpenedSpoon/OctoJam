@@ -11,3 +11,6 @@ Meteor.publish 'userProfiles', () ->
 	if this.userId
 		return Meteor.users.find {}, { fields: {'_id': 1, 'things'} }
 ###
+
+Meteor.publish 'comments', () ->
+	return Comments.find()
