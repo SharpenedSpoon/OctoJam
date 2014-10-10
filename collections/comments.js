@@ -92,7 +92,18 @@ Comments.allow({
 	},
 
 	remove: function(userId, doc) {
-		// user must be logged in, and doc must be owned by user
-		return (userId && doc.owner === userId);
+		var canEdit = false;
+		if (userId) {
+			// comment author and game author can edit comments
+			if (doc.owner == userId) {
+				canEdit = true;
+			} else {
+				var game = Games.findOne({_id: doc.gameId});
+				if (game) {
+					canEdit = (game.owner == userId);
+				}
+			}
+		}
+		return canEdit;
 	}
 });
