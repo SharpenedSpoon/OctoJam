@@ -16,10 +16,10 @@ Comments = new Mongo.Collection('comments');
 Comments.attachSchema(new SimpleSchema({
 	content: {
 		type: String,
-		label: 'Comment',
+		label: 'Leave a Comment',
 		max: 1000,
 		autoform: {
-			rows: 10
+			rows: 5
 		},
 		autoValue: function() {
 			if (this.isSet) {
@@ -70,32 +70,25 @@ Comments.attachSchema(new SimpleSchema({
 			omit: true
 		},
 		autoValue: function() {
-			console.log(this);
 			return this.userId;
 		}
 	},
-	/*gameId: {
+	gameId: {
 		type: String,
 		autoform: {
 			omit: true
 		},
 		autoValue: function() {
-			console.log(this);
 			return this.value;
 		}
-	}*/
+	}
 }));
 
 
 Comments.allow({
 	insert: function(userId, doc) {
 		// user must be logged in, and doc must be owned by user
-		return (userId && doc.owner === userId);
-	},
-
-	update: function(userId, doc) {
-		// user must be logged in, and doc must be owned by user
-		return (userId && doc.owner === userId);
+		return (userId && doc.owner === userId && Games.findOne(doc.gameId));
 	},
 
 	remove: function(userId, doc) {

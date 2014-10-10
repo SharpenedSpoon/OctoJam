@@ -1,9 +1,17 @@
 <template name="comments">
-	<div class="comments">
 
-		Comments here!
+	<hr/>
+
+	<div class="comments">
+		<h2>Comments</h2>
+
+		{{#each comments}}
+			{{> commentItem}}
+		{{/each}}
+		
 		{{#if currentUser}}
-			{{> quickForm collection="Comments" id="insertComment" type="insert"}}
+			{{> newCommentForm}}
 		{{/if}}
 	</div>
+
 </template>

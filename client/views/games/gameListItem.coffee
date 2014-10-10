@@ -5,3 +5,7 @@ Template.gameListItem.authorDisplayName = () ->
 	if user
 		name = if user.profile.displayName then user.profile.displayName else user.username
 	return name
+
+
+Template.gameListItem.commentCount = () ->
+	return Comments.find({gameId: @._id}).fetch().length
