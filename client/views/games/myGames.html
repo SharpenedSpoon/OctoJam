@@ -1,0 +1,42 @@
+<template name="myGames">
+
+	<h1 class="page-header">My Games</h1>
+	{{#if hasGames}}
+
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>State</th>
+					<th colspan="3"></th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#each games}}
+				<tr>
+					<td>{{title}}</td>
+					<td>{{activeState}}</td>
+					<td><a href="{{pathFor 'gameDetails'}}">View</a></td>
+					<td><a href="{{pathFor 'editGame'}}">Edit</a></td>
+					<td><a href="http://johnearnest.github.io/Octo/index.html?gist={{embedId}}">Source</a></td>
+				</tr>
+			{{/each}}
+		</tbody></table>
+
+	{{else}}
+
+		<div class="alert alert-success">It appears that you have no games! If you think this is in error, please let us know (this site is in active beta, after all)!</div>
+
+	{{/if}}
+
+	{{#if currentUser}}
+
+		<br/><br/>
+		Your games are displayed under the name "{{userDisplayName}}"
+		<br/><br/>
+		<input type="text" value="{{userDisplayName}}" id="newDisplayName" /><button type="button" class="btn btn-primary btn-sm" id="updateDisplayName">Update Display Name</button>
+
+	{{/if}}
+
+</template>

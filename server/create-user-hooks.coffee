@@ -1,4 +1,6 @@
 Accounts.onCreateUser (options, user) ->
-	user.username = user.emails[0].address.replace(/(.*)@.*/, "$1").replace(/[^A-Za-z]/g, '')
-	user.profile = options.profile if options.profile
+	username = user.emails[0].address.replace(/(.*)@.*/, "$1").replace(/[^A-Za-z]/g, '')
+	#user.username = username
+	user.profile = if options.profile then options.profile else {}
+	user.profile.displayName = username
 	return user

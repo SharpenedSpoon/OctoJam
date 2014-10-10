@@ -1,0 +1,43 @@
+/*
+
+
+.comments
+	#insertComment
+	.comment
+		.comment-author
+		.comment-content
+*/
+
+.comments {
+	max-width: 600px;
+	margin: 0 auto;
+
+	#insertComment {
+		margin-top: 13px;
+	}
+
+	.comment {
+		padding: 5px 8px;
+	}
+
+	.comment-author {
+		font-style: italic;
+	}
+
+	.comment-content {
+		margin-left: 13px;
+	}
+
+	.comment:nth-child(2n) {
+		background: #efefef;
+	}
+
+	// close button
+	.close {
+		opacity: 0.1;
+		transition: opacity linear 0.2s;
+	}
+	.comment:hover .close {
+		opacity: 0.3;
+	}
+}

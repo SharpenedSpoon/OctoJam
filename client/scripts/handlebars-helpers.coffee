@@ -15,12 +15,15 @@ currentPageTitle = () ->
 Handlebars.registerHelper 'setPageTitle', () ->
 	document.title = currentPageTitle()
 
-
 Meteor.startup () ->
 	Games.helpers {
 		author: () ->
-			user = 'A G-g-g-ghost!'
+			user = ''
 			user = Meteor.users.findOne(this.userId)
-			user = user.username if user
+			if user
+				if user.profile.displayName
+					user = user.profile.displayName
+				else
+					user = user.username
 			return user
 	}

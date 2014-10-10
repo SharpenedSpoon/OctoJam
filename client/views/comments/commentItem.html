@@ -1,0 +1,13 @@
+<template name="commentItem">
+
+	<div class="comment">
+		{{#if canEdit}}
+			<button class="btn btn-close close" id="removeComment"><i class="glyphicon glyphicon-remove"></i></button>
+		{{/if}}
+		<div class="comment-author">
+			{{author}} - {{timeago}}
+		</div>
+		<div class="comment-content">{{{content}}}</div>
+	</div>
+
+</template>

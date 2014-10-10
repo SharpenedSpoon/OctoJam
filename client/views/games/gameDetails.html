@@ -1,11 +1,38 @@
 <template name="gameDetails">
+	<div class="container">
+	{{#if title}}
+		<center>
+			<h1 class="page-header">{{title}}</h1>
 
-	<h1 class="page-header">{{title}}</h1>
+			<h3>
+				{{authorDisplayName}}
+				{{#if canEdit}}
+					<small><a href="{{pathFor 'editGame'}}">(Edit)</a></small>
+				{{/if}}
+			</h3>
 
-	<h2>By {{author}}</h2>
+			<iframe
+				src="/embed.html?scale=4&gist={{embedId}}"
+				frameborder="0"
+				marginheight="0"
+				marginwidth="0"
+				scrolling="no"
+				seamless="true"
+				width="512"
+				height="256"
+			></iframe>
 
-	{{> octoEmbed}}
+			<br/><br/>
 
-	<div>{{{description}}}</div>
+			<div>{{{description}}}</div>
 
+			<br/><br/>
+
+			<div><small><a href="http://johnearnest.github.io/Octo/index.html?gist={{embedId}}">Source</a></small></div>
+
+		</center>
+		<br/><br/>
+		{{> comments}}
+	{{/if}}
+	</div>
 </template>

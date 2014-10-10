@@ -18,10 +18,11 @@ Router.map () ->
 	@route 'home', { path: '/', layoutTemplate: 'homepageLayout' }
 
 	# 'All Games' Page
-	# @route 'games', { path: '/games' }
+	@route 'games', { path: '/games' }
 
 	# User Account Page
 	# @route 'myAccount', { path: '/me' }
+	@route 'myGames', { path: '/me' }
 
 	# Static Content Pages
 	# @route 'faq', { path: '/faq' }
@@ -30,17 +31,33 @@ Router.map () ->
 	# @route 'bootstrap', { path: '/bootstrap' }
 
 	# Submit a game page
-	# @route 'newGame', { path: '/submit-game' }
+	@route 'newGame', { path: '/submit-game' }
+
+	# Edit a game page
+	@route 'editGame',
+		data: ->
+			return Games.findOne(@params._id)
+
+		onBeforeAction: ->
+			game = @data()
+
+		path: '/edit-game/:_id'
+
+		waitOn: ->
+			return Meteor.subscribe('games', @params._id)
+
 
 	# Game Details Pages
-	# @route 'gameDetails',
-	# 	data: ->
-	# 		return Games.findOne(@params._id)
-	#
-	# 	onBeforeAction: ->
-	# 		game = @data()
-	#
-	# 	path: '/game/:_id'
-	#
-	# 	waitOn: ->
-	# 		return Meteor.subscribe('games', @params._id)
+	@route 'gameDetails',
+		data: ->
+			return Games.findOne(@params._id)
+
+		onBeforeAction: ->
+			game = @data()
+
+		path: '/game/:_id'
+
+		layoutTemplate: 'gameDetailsLayout'
+
+		waitOn: ->
+			return Meteor.subscribe('games', @params._id)

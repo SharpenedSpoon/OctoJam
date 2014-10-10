@@ -1,0 +1,17 @@
+<template name="comments">
+
+	<hr/>
+
+	<div class="comments">
+		<h2>Comments</h2>
+
+		{{#each comments}}
+			{{> commentItem}}
+		{{/each}}
+		
+		{{#if currentUser}}
+			{{> newCommentForm}}
+		{{/if}}
+	</div>
+
+</template>
