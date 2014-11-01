@@ -15,7 +15,7 @@ Games
         embedId     (string) (/Octo/embed.html?scale=2&gist=________)
         status      (string)
         description (string)
-        [owner]       (string) (user._id)
+        [owner]     (string) (user._id)
         [createdAt] (Date)
         [updatedAt] (Date)
 */
@@ -103,16 +103,7 @@ Games.attachSchema(new SimpleSchema({
         autoValue: function() {
             return this.userId;
         }
-    },
-    // author: {
-    //     type: String,
-    //     autoform: {
-    //         omit: true
-    //     },
-    //     autoValue: function() {
-    //         return Meteor.user().emails[0].address.replace(/@.*/, '')
-    //     }
-    // }
+    }
 }));
 
 
@@ -129,6 +120,6 @@ Games.allow({
 
     remove: function(userId, doc) {
         // user must be logged in, and doc must be owned by user
-        return (userId && doc.owner === userId);
+        return false;//(userId && doc.owner === userId);
     }
 });

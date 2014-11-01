@@ -18,7 +18,11 @@
 		<div><small>
 			<a href="http://johnearnest.github.io/Octo/index.html?gist={{embedId}}">Source</a>
 			<br/>
-			{{commentCount}} Comments
+			{{#if commentCount}}
+				{{commentCount}} Comments
+			{{/if}}
+			<br/>
+			{{> castVote}}
 		</small></div>
 
 

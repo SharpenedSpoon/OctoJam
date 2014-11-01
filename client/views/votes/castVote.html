@@ -1,0 +1,11 @@
+<template name="castVote">
+
+	{{#if currentUser}}
+		{{#if canVote}}
+			<button class="btn btn-primary btn-sm js-cast-vote">Cast Vote</button>
+		{{else}}
+			<button class="btn btn-primary btn-sm" disabled>Voted!</button>
+		{{/if}}
+	{{/if}}
+
+</template>

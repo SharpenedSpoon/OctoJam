@@ -25,3 +25,6 @@ AutoForm.hooks({
 # Comments related
 #
 Meteor.subscribe('comments')
+
+
+Meteor.subscribe 'votes'

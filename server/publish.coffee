@@ -15,3 +15,6 @@ Meteor.publish 'comments', () ->
 		userIds.push comment.owner
 	users = Meteor.users.find { _id: {$in: userIds} }, { fields: {_id: 1, profile: 1} }
 	return [comments, users]
+
+Meteor.publish 'votes', () ->
+	return Votes.find({owner: this.userId})
