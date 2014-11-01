@@ -1,14 +1,16 @@
-Template.commentItem.canEdit = () ->
-	canEdit = false
-	currentUser = Meteor.userId()
-	if currentUser
-		# comment author and game author can edit comments
-		if @owner == currentUser
-			canEdit = true
-		else
-			game = Games.findOne({_id: @gameId})
-			canEdit = (game.owner == currentUser) if game
-	return canEdit
+Template.commentItem.helpers {
+	canEdit: () ->
+		canEdit = false
+		currentUser = Meteor.userId()
+		if currentUser
+			# comment author and game author can edit comments
+			if @owner == currentUser
+				canEdit = true
+			else
+				game = Games.findOne({_id: @gameId})
+				canEdit = (game.owner == currentUser) if game
+		return canEdit
+	}
 
 
 Template.commentItem.events {

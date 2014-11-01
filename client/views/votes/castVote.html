@@ -2,9 +2,9 @@
 
 	{{#if currentUser}}
 		{{#if canVote}}
-			<button class="btn btn-primary btn-sm js-cast-vote">Cast Vote</button>
+			<button class="btn btn-primary btn-xs js-cast-vote">Cast Vote</button>
 		{{else}}
-			<button class="btn btn-primary btn-sm" disabled>Voted!</button>
+			<span class="text-muted"><em>Voted!</em></span>
 		{{/if}}
 	{{/if}}
 

@@ -4,16 +4,7 @@
 		<h4 class="title"><a href="{{pathFor 'gameDetails'}}">{{title}}</a></h4>
 		<h5 class="author">{{authorDisplayName}}</h5>
 
-		<iframe
-			src="/embed.html?scale=2&gist={{gist}}"
-			frameborder="0"
-			marginheight="0"
-			marginwidth="0"
-			scrolling="no"
-			seamless="true"
-			width="256"
-			height="128"
-		></iframe>
+		{{> octoEmbed gist=gist scale=2 padding=8 link=false}}
 
 		<div><small>
 			<a href="http://johnearnest.github.io/Octo/index.html?gist={{embedId}}">Source</a>

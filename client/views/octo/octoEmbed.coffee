@@ -34,6 +34,5 @@ Template.octoEmbed.helpers {
 Template.octoEmbed.events {
 	'click .js-toggle-full-screen': (e, t) ->
 		e.preventDefault()
-		console.log t
 		t.$('.octo-embed-container').toggleClass('full-screen')
 }

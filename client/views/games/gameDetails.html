@@ -11,16 +11,7 @@
 				{{/if}}
 			</h3>
 
-			<iframe
-				src="/embed.html?scale=4&gist={{embedId}}"
-				frameborder="0"
-				marginheight="0"
-				marginwidth="0"
-				scrolling="no"
-				seamless="true"
-				width="512"
-				height="256"
-			></iframe>
+			{{> octoEmbed gist=embedId scale=4 width="100%" padding=200 link=false allowfullscreen=true}}
 
 			<br/><br/>
 
