@@ -110,7 +110,10 @@ Games.attachSchema(new SimpleSchema({
 Games.allow({
     insert: function(userId, doc) {
         // user must be logged in, and doc must be owned by user
-        return (userId && doc.owner === userId);
+        //return (userId && doc.owner === userId);
+
+        // gamejam is closed to entries!
+        return false;
     },
 
     update: function(userId, doc) {
