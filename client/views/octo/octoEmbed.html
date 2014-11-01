@@ -1,15 +1,23 @@
 <template name="octoEmbed">
 
-	<iframe
-		src="/embed.html?scale={{scale}}&gist={{gist}}"
-		frameborder="0"
-		marginheight="0"
-		marginwidth="0"
-		scrolling="no"
-		seamless="true"
-		width="{{width}}"
-		height="{{height}}"
-	></iframe>
+
+	<div class="octo-embed-container">
+		<iframe
+			src="/embed.html?scale={{scale}}&gist={{gist}}"
+			frameborder="0"
+			marginheight="0"
+			marginwidth="0"
+			scrolling="no"
+			seamless="true"
+			width="{{width}}"
+			height="{{height}}"
+		></iframe>
+
+		{{#if allowfullscreen}}
+			<span class="fixed-button js-toggle-full-screen" alt="Toggle full screen"><i class="glyphicon glyphicon-resize-full"></i></span>
+		{{/if}}
+	</div>
+
 
 	{{#if link}}
 		<div><small><a href="http://johnearnest.github.io/Octo/index.html?gist={{embedId}}">Source</a></small></div>
