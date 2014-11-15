@@ -3,10 +3,12 @@
 	{{> jumbotron}}
 
 	<div class="container">
+		{{> gongshow}}
+		{{> winners}}
 		{{> finish}}
-		{{> rules}}
+
 		{{> chip8Overview}}
-		{{> faq}}
+
 	</div>
 </template>
 
@@ -16,21 +18,41 @@
 	<div class="jumbotron" style="text-align: center;">
 
 		<div class="container">
-			<p>{{> octoEmbed gist='937cbcb434cc72b286fb' scale='4' link='false'}}</p>
+			<p>{{> octoEmbed gist='937cbcb434cc72b286fb' scale='3' link='false'}}</p>
 
 			<h1>Octo-ber Jam 2014</h1>
-			<p>Chip8 is a language that let programmers write portable games for 8-bit home computers in the 1970s. Today, Chip8 lives on in the form of emulators.</p>
-			<p><a href="http://johnearnest.github.io/Octo/" alt="Link to Octo IDE" target="_blank">Octo</a> is a tool that makes it easy to write and share Chip8 programs. Roll up your sleeves and join us for a retro game-jam celebrating Chip8!</p>
-
+			<p>Chip8 is a language that let programmers write portable games for 8-bit home computers in the 1970s.<br/>Today, Chip8 lives on in the form of emulators. Try it out using <a href="http://johnearnest.github.io/Octo/" alt="Link to Octo IDE" target="_blank">Octo</a>!</p>
 		</div>
 	</div>
 
 </template>
 
 
+<template name="gongshow">
+	<center>
+		<h2 class="page-header">Watch the Octo-ber Jam Showcase!</h2>
+		<iframe width="560" height="315" src="//www.youtube.com/embed/B-FROP4pYe0" frameborder="0" allowfullscreen></iframe>
+		<p>JonTerp, Everdraed, and InternetJanitor got together and created an AMAZING showcase for the submitted games.<br/>Watch and listen as InternetJanitor goes in depth with fascinating details about each submission.</p>
+		<p>Thanks to InternetJanitor for his insightful input, and for creating Octo! It is an amazing platform and has allowed a lot of us to experience low-level programming in a non-threatening way.</p>
+		<p>We are definitely going to keep this jam going throughout the years (your children's children will speak in hushed tones about this, the first Octo-ber Jam!), but until then we plan on keeping this site up and maintained as a modest hub to show off Chip8 games and foster discussion. Come and join us in IRC, and submit some games (once we open it back up)!</p>
+	</center>
+</template>
+
+
+<template name="winners">
+	<h2 class="page-header">Congratulations to the Winners of the First Ever Octo-ber Jam!</h2>
+	<ol>
+		<li>jackie kircher - <a href="http://octojam.com/game/Kvu57n7LbGSbwe7SZ">Glitch Ghost</a></li>
+		<li>yournamehere - <a href="http://octojam.com/game/qCmZexWDG6EarcvzK">Turnover 77</a></li>
+		<li>Tann - <a href="http://octojam.com/game/ZhNiXTyeuZTFhgzMd">Super Square</a></li>
+		<li value="3">SupSuper - <a href="http://octojam.com/game/3niTMhujSYihWkCmv">Rockto</a></li>
+	</ol>
+</template>
+
+
 <template name="finish">
 	<h2 class="page-header">Pencils Down!</h2>
-	<p>It's been a long month, but we've made it to November. Octojam submissions are now closed. We've had a number of great submissions- thanks to everyone who participated or helped spread the word! Now it's time to play some games. Logged in users can leave comments on other submissions and upvote their favorites. Spread the word to your friends, or come join us in IRC for the afterparty: irc.synirc.net #SAGamedev</p>
+	<p>It's been a long month, but we've made it to November. Octojam submissions are now closed. We've had a number of great submissions- thanks to everyone who participated or helped spread the word! Now it's time to play some games.</p>
 	<p>We hope you've had fun learning about this little slice of computing history. Octo's development is an ongoing project, and next year we'll have some great new features that make all kinds of new games possible. Stay tuned on our <a href="https://github.com/JohnEarnest/Octo" target="_blank">Github Page</a> and come back next year!</p>
 </template>
 
