@@ -17,5 +17,5 @@ Meteor.publish 'comments', () ->
 	return [comments, users]
 
 Meteor.publish 'votes', () ->
-	# return Votes.find({owner: this.userId})
-	return Votes.find()
+	# return Votes.find({owner: this.userId}) # voting is closed!
+	return Votes.find({}, {fields: {votes: 1}}) # this is to count the votes

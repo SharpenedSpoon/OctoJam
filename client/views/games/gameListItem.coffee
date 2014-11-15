@@ -8,4 +8,7 @@ Template.gameListItem.helpers {
 
 	commentCount: () ->
 		return Comments.find({gameId: @._id}).fetch().length
+
+	votes: () ->
+		return Votes.find({votes: @._id}).count()
 }

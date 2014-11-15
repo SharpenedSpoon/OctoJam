@@ -25,9 +25,3 @@
 #
 #
 # }
-
-
-
-Meteor.methods {
-	countVotes: (gameId) -> Votes.find({votes: gameId}).count()
-}
