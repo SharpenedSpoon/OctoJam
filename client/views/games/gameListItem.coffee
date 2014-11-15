@@ -11,4 +11,6 @@ Template.gameListItem.helpers {
 
 	votes: () ->
 		return Votes.find({votes: @._id}).count()
+
+	canSeeVotes: () -> return (Meteor.user() && Meteor.user().emails[0].address == 'iandouglas@gmail.com')
 }
