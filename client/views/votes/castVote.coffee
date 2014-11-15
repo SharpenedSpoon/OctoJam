@@ -9,17 +9,20 @@ Template.castVote.events {
 
 Template.castVote.helpers {
 	canVote: () ->
-		if (! Meteor.userId())
-			return false
+		
+		return false; # voting is now closed!!
 
-		vote = Votes.findOne({owner: Meteor.userId()})
-		# console.log vote
-
-		if (! vote)
-			return true
-		else
-			if (_.indexOf(vote.votes, @_id) == -1)
-				return true
-			else
-				return false
+		# if (! Meteor.userId())
+		# 	return false
+		#
+		# vote = Votes.findOne({owner: Meteor.userId()})
+		# # console.log vote
+		#
+		# if (! vote)
+		# 	return true
+		# else
+		# 	if (_.indexOf(vote.votes, @_id) == -1)
+		# 		return true
+		# 	else
+		# 		return false
 }

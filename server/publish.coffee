@@ -17,4 +17,5 @@ Meteor.publish 'comments', () ->
 	return [comments, users]
 
 Meteor.publish 'votes', () ->
-	return Votes.find({owner: this.userId})
+	# return Votes.find({owner: this.userId})
+	return Votes.find()
